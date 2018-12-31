@@ -1,5 +1,5 @@
 import numpy
-
+import IPython
 class S2N():
     def __init__(self):#This class can only be inherited from
         pass
@@ -11,6 +11,8 @@ class S2N():
 
 
     def SNfunc(self,data,sig,significancefloor=0.5):
+       
+       
         D=data.ravel()
         S=sig.ravel()
 
@@ -23,10 +25,12 @@ class S2N():
 
         #regional SN
         import scipy.ndimage as  ndimage
-        data[data/sig<significancefloor]=0
+        #data[data/sig<significancefloor] = 0
         masks, multiplicity = ndimage.measurements.label(data)
-        labels=numpy.arange(1, multiplicity+1)
-        SNs=numpy.zeros(multiplicity+1)
+        labels = numpy.arange(1, multiplicity+1)
+        SNs = numpy.zeros(multiplicity+1)
+        #SNs = numpy.array(multiplicity+1) # check this
+
         SNs[0]=SN
         for i in range(multiplicity):
             D=data[masks==i+1].ravel()
