@@ -146,7 +146,7 @@ class Estimator(NestedSampler):
         sampler.sample(nburn)
 
         cov = covfromtrace(sampler,covarpars)/4
-        sampler = pymc.MCMC([loglikelihood,mcmcpars],db='pickle',dbname=outname)
+        sampler = pymc.MCMC([loglikelihood,mcmcpars],db='cPickle',dbname=outname)
         sampler.use_step_method(MySM.MWAdaptiveMetropolis,covarpars,cov=cov,delay=niter*10,interval=niter*10,doLikelihood=True,Markovian=True)
         sampler.sample(niter+nburn,nburn,nthin)
 

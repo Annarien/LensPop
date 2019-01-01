@@ -59,7 +59,7 @@ for survey in surveystoread:
     filename="%s_%s_lists.pkl"%(survey,sourcepop)
     lensparsfile="lenses_%s.txt"%survey
     f=open(lensparsfile,"w")
-    print 
+    print
     #os.system("rm %s"%filename) #this line resets the read-in
     bl={}
     zs={}
@@ -212,7 +212,7 @@ for survey in surveystoread:
     print survey, "will find",
     print numpy.sum(numpy.array(weights["resolved"]).ravel()),
     print "lenses assuming poisson limited galaxy subtraction in all bands, or",
-    print numpy.sum(numpy.array(weights["rfpf"]).ravel()), 
+    print numpy.sum(numpy.array(weights["rfpf"]).ravel()),
     print "lenses in the g-i difference images"
 
     f=open(filename,"wb")

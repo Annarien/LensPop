@@ -5,7 +5,7 @@ class zSPSModel:
         """
         All arguments (files,axes,filters,redshifts) are required.
 
-        `files' is a list of filenames. Each filename points to a pickle'd
+        `files' is a list of filenames. Each filename points to a cPickle'd
             set of SPS spectra.
         `axes' is a dictionary; the keys are each of the parameters of the
             SPS model. Each key points to a dictionary with two keys: `points'

@@ -146,14 +146,14 @@ class Estimator(NestedSampler):
 #        cov = sampler.step_method_dict[covarpars[0]][0].C
 #        propsd = sampler.step_method_dict[covarpars[0]][0].proposal_sd
         cov = covfromtrace(sampler,covarpars)
-        sampler = pymc.MCMC([loglikelihood,mcmcpars],db='pickle',dbname=outname)
+        sampler = pymc.MCMC([loglikelihood,mcmcpars],db='cPickle',dbname=outname)
         #sampler.use_step_method(MySM.MWAdaptiveMetropolis,mcmcpars.values(),cov=cov,delay=niter+1,doLikelihood=True,Markovian=True)
         sampler.use_step_method(MySM.MWAdaptiveMetropolis,covarpars,cov=cov,delay=niter+1,doLikelihood=True,Markovian=True)
 #        sampler.step_method_dict[covarpars[0]][0].proposal_sd = propsd
         sampler.sample(niter+nburn,nburn,nthin)
         """
         # This code doesn't attempt to create a refined proposal distribution
-        sampler = pymc.MCMC([loglikelihood,mcmcpars],db='pickle',dbname=outname)
+        sampler = pymc.MCMC([loglikelihood,mcmcpars],db='cPickle',dbname=outname)
         sampler.use_step_method(pymc.AdaptiveMetropolis,mcmcpars.values(),delay=niter*2)
         sampler.sample(niter+nburn,nburn,nthin)
         """

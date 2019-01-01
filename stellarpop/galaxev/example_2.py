@@ -47,7 +47,7 @@ for ised in iseds:
 #
 
 # A redshift (or list of redshifts) and filter set must be specified. Also
-#   specifiy an output name for pickle'ing.
+#   specifiy an output name for cPickle'ing.
 redshift = 0.6459
 filters = ['u_SDSS','g_SDSS','r_SDSS','i_SDSS','z_SDSS']
 outname = 'mySPSmodel.dat'
@@ -78,7 +78,7 @@ tV = cPickle.load(f)
 a = cPickle.load(f)
 f.close()
 
-# DON'T USE THE pickle'd age ARRAY -- THIS IS ONLY YOUNG/OLD AGES!!!
+# DON'T USE THE cPickle'd age ARRAY -- THIS IS ONLY YOUNG/OLD AGES!!!
 #axes['age'] = a
 # INSTEAD USE THE age ARRAY DEFINED EARLIER, OR RE-DEFINE IT, OR CONCATENATE
 #   THE ARRAYS FROM A young AND old FILE

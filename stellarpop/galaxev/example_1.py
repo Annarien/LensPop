@@ -35,7 +35,7 @@ for ised in iseds:
 #
 
 # A redshift (or list of redshifts) and filter set must be specified. Also
-#   specifiy an output name for pickle'ing.
+#   specifiy an output name for cPickle'ing.
 redshift = 0.6459
 filters = ['u_SDSS','g_SDSS','r_SDSS','i_SDSS','z_SDSS']
 outname = 'mySPSmodel.dat'

@@ -53,7 +53,7 @@ class RedshiftDependentRelation():
         z2d=iT.coords((z2bins.size,z2bins.size))*self.dz2
         self.Da_bispline=interpolate.RectBivariateSpline(z2bins,z2bins,Da2bins)
 
-        #pickle the splines
+        #cPickle the splines
         splinedump=open("redshiftsplines.pkl","wb")
         cPickle.dump([self.Da_spline,self.Dmod_spline,self.volume_spline,self.Da_bispline],splinedump,2)
 
@@ -350,7 +350,7 @@ class SourcePopulation_(Population):
         self.population="cosmos"
 
         try:
-            #load pickledcosmos
+            #load cPickledcosmos
             cosmosdump=open("cosmosdata.pkl","rb")
             cosmosphotozs=cPickle.load(cosmosdump)
         except IOError or EOFError:   

@@ -68,7 +68,7 @@ def makeUserSED(filename):
 
 def getUserSED(filename):
     """
-    Loads a (binary) model of an SED from a pickle
+    Loads a (binary) model of an SED from a cPickle
     """
     import cPickle
     f = open(filename,'rb')
@@ -79,7 +79,7 @@ def getUserSED(filename):
 
 def writeSEDtoFile(sed,filename):
     """
-    Writes a binary pickle of the SED to file
+    Writes a binary cPickle of the SED to file
     """
     import cPickle
     f = open(filename,'wb')
